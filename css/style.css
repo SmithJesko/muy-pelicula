@@ -1,0 +1,42 @@
+#movies img, #movie img {
+    width: 100%;
+}
+
+@media(min-width:960px){
+    #movies .col-md-3 .well {
+        padding: 15px;
+        height: 390px;
+        margin-bottom: 50px;
+    }
+
+    #movies .col-md-3 img {
+        height: 300px;
+        margin-bottom: 10px;
+    }
+}
+
+#movie {
+    background-color: #111;
+    padding: 15px;
+}
+
+.list-group {
+    border-radius: 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 1em 0;
+    padding: 0; 
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
