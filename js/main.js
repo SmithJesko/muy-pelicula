@@ -47,6 +47,7 @@ function getMovie() {
             console.log(movieId);
             console.log(response);
             let movie = response.data;
+            sessionStorage.setItem('movieTitle', movie.Title);
             let output = `
                 <div class="row">
                     <div class="col-md-4">
@@ -88,7 +89,9 @@ function getMovie() {
 
 function getPlayer() {
     let movieId = sessionStorage.getItem('movieId');
+    let movieTitle = sessionStorage.getItem('movieTitle');
     let output = `
+    <h3>${movieTitle}</h3>
     <iframe src="https://videospider.in/getvideo?key=${playerapikey}&video_id=${movieId}" width="800" height="600" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
     `;
     $('#player').html(output);
