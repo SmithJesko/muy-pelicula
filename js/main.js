@@ -10,7 +10,7 @@ $(document).ready(() => {
 });
 
 function getMovies(searchText) {
-    axios.get(`https://cors-anywhere.herokuapp.com/http://www.omdbapi.com?apikey=${apikey}&s=${searchText}`)
+    axios.get(`https://www.omdbapi.com?apikey=${apikey}&s=${searchText}`)
         .then((response) => {
             console.log(response);
             let movies = response.data.Search;
@@ -42,7 +42,7 @@ function movieSelected(id) {
 
 function getMovie() {
     let movieId = sessionStorage.getItem('movieId');
-    axios.get(`https://cors-anywhere.herokuapp.com/http://www.omdbapi.com?apikey=${apikey}&i=${movieId}`)
+    axios.get(`https://www.omdbapi.com?apikey=${apikey}&i=${movieId}`)
         .then((response) => {
             console.log(movieId);
             console.log(response);
@@ -73,7 +73,7 @@ function getMovie() {
                             <h3>Plot</h3>
                             ${movie.Plot}
                             <hr>
-                            <a href="https://cors-anywhere.herokuapp.com/http://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
+                            <a href="https://imdb.com/title/${movie.imdbID}" target="_blank" class="btn btn-primary">View IMDB</a>
                             <a onclick="movieSelected('${movie.imdbID}')" class="btn btn-primary" href="player.html">Watch Movie</a>
                             <a href="index.html" class="btn btn-secondary">Go Back to Search</a>
                         </div>
